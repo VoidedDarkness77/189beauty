@@ -1,0 +1,926 @@
+/* ==========================================================
+   189 BEAUTY — PREMIUM PINK • BLACK • GOLD THEME
+   With shimmer effects, product filtering, animations & more
+   ========================================================== */
+
+/* ---------------- GLOBAL ---------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff5fa;
+    color: #000;
+    overflow-x: hidden;
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in forwards;
+}
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* ---------------- GOLD SHIMMER EFFECT ---------------- */
+.shimmer-gold {
+    background: linear-gradient(90deg, #d4af37, #fff, #d4af37);
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: goldShimmer 2.5s infinite linear;
+}
+
+@keyframes goldShimmer {
+    0% { background-position: 0% }
+    100% { background-position: 200% }
+}
+
+/* ---------------- NAVBAR ---------------- */
+.navbar {
+    background: #000;
+    padding: 18px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 3px solid #d4af37;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    margin-left: 25px;
+    transform: translateY(0);
+    transition: 0.3s ease;
+}
+
+.nav-links li:hover {
+    transform: translateY(-3px);
+}
+
+.nav-links a {
+    color: #ffe6f3;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    padding: 6px 10px;
+}
+
+.nav-links a:hover {
+    background: #ff77b7;
+    color: #000;
+    border-radius: 4px;
+}
+
+/* ---------------- FLOATING CTA BUTTON ---------------- */
+.floating-cta {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    background: #d4af37;
+    color: #000;
+    padding: 15px 20px;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(212,175,55,0.4);
+    transition: 0.3s;
+    z-index: 1000;
+}
+
+.floating-cta:hover {
+    transform: scale(1.1);
+    background: #ff77b7;
+    color: white;
+}
+
+/* ---------------- HERO SECTION ---------------- */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-bg.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 150px 20px;
+    position: relative;
+}
+
+.hero h1 {
+    font-size: 60px;
+    margin-bottom: 20px;
+    color: #d4af37;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.cta-btn {
+    padding: 15px 35px;
+    background: #ff77b7;
+    color: black;
+    font-weight: bold;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s, transform 0.2s;
+}
+
+.cta-btn:hover {
+    background: #ff77b7;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* ---------------- FEATURED PRODUCTS ---------------- */
+.featured-products {
+    padding: 80px 20px;
+    background: #fff5fa;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.product-card {
+    background: #fff;
+    padding: 20px;
+    width: 250px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: 0.3s, transform 0.2s;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.product-btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: #ff77b7;
+    color: black;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.product-btn:hover {
+    background: #ff77b7;
+    color: white;
+}
+
+/* ---------------- ABOUT SECTION ---------------- */
+.about-us {
+    padding: 80px 20px;
+    text-align: center;
+    color: #333;
+}
+
+.about-us p {
+    max-width: 700px;
+    margin: 20px auto 0 auto;
+    font-size: 18px;
+}
+
+/* ---------------- SHIMMER GOLD CLASS ---------------- */
+.shimmer-gold {
+    background: linear-gradient(90deg, #d4af37 0%, #ffdd85 50%, #d4af37 100%);
+    background-size: 200% auto;
+    color: #d4af37;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    to {background-position: -200% center;}
+}
+
+/* Responsive */
+@media(max-width:768px){
+    .product-grid {flex-direction: column; align-items: center;}
+    .hero h1 {font-size: 40px;}
+    .hero p {font-size: 18px;}
+}
+/* ---------------- NEW ARRIVALS SLIDER ---------------- */
+.new-arrivals {
+    padding: 80px 20px;
+    background: #fff5fa;
+}
+
+.slider-container {
+    position: relative;
+    max-width: 1000px;
+    margin: 30px auto 0 auto;
+    overflow: hidden;
+}
+.slider-track {
+    display: flex;
+    transition: transform 0.8s ease-in-out; /* smooth slide */
+}
+
+.slide {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Show slides that are currently visible */
+.slider-track .slide {
+    opacity: 1;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    min-width: 200px;
+    margin: 0 10px;
+    background: #fff;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    padding: 15px;
+    transition: transform 0.3s;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 10px;
+}
+
+.slide:hover {
+    transform: translateY(-5px);
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #d4af37;
+    border: none;
+    color: black;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 10;
+    transition: 0.3s, transform 0.2s;
+}
+
+.slider-btn:hover {
+    background: #ff77b7;
+    color: white;
+    transform: scale(1.1);
+}
+
+.slider-btn.prev { left: 10px; }
+.slider-btn.next { right: 10px; }
+
+@media(max-width:768px){
+    .slide {min-width: 150px;}
+    .slider-btn {font-size: 25px;}
+}
+
+
+/* ---------------- SECTION TITLES ---------------- */
+.center {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 34px;
+    color: #000;
+}
+
+/* ---------------- PRODUCT FILTER ---------------- */
+.filter-controls {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.filter-btn {
+    background: #000;
+    color: #ffe6f3;
+    padding: 10px 25px;
+    border: 2px solid #d4af37;
+    border-radius: 8px;
+    margin: 10px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.filter-btn:hover {
+    background: #ff77b7;
+    color: #000;
+}
+
+/* ---------------- PRODUCT GRID ---------------- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    padding: 40px 6%;
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 3px solid #d4af37;
+    box-shadow: 0 0 15px rgba(255, 119, 183, 0.2);
+    transition: 0.35s;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 0 25px rgba(255, 119, 183, 0.45);
+}
+
+.product-card img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.product-card p {
+    color: #d4af37;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 18px;
+}
+
+/* ---------------- SERVICES ---------------- */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 40px 7%;
+}
+
+.service-box {
+    background: #000;
+    color: #ffe6f3;
+    padding: 25px;
+    border-radius: 10px;
+    border: 3px solid #d4af37;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.service-box:hover {
+    background: #ff77b7;
+    color: #000;
+}
+
+/* ---------------- TESTIMONIALS ---------------- */
+.testimonials {
+    padding: 40px 7%;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    background: white;
+    border: 2px solid #ff77b7;
+    border-radius: 10px;
+    padding: 25px;
+    width: 340px;
+    box-shadow: 0 0 12px rgba(255,119,183,0.2);
+}
+
+.testimonial strong {
+    display: block;
+    margin-top: 10px;
+    color: #d4af37;
+}
+
+/* ---------------- FOOTER ---------------- */
+footer {
+    background: #000;
+    color: #ffe6f3;
+    text-align: center;
+    padding: 25px;
+    margin-top: 50px;
+    border-top: 3px solid #d4af37;
+}
+
+/* ---------------- LOGIN / REGISTER ---------------- */
+.auth-container {
+    width: 420px;
+    margin: 40px auto;
+    background: #fff5fa;
+    padding: 35px;
+    border-radius: 15px;
+    border: 3px solid #d4af37;
+    box-shadow: 0 0 20px rgba(255,119,183,0.3);
+}
+
+.auth-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #d4af37;
+}
+
+.auth-container input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    border: 2px solid #ff77b7;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 12px;
+    background: #ff77b7;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.auth-btn:hover {
+    background: #d4af37;
+    color: black;
+}
+/* ---------------- CONTACT FORM ---------------- */
+.contact-container {
+    width: 650px;
+    margin: 50px auto;
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    border: 3px solid #d4af37;
+    box-shadow: 0 0 25px rgba(255,119,183,0.25);
+}
+
+.contact-container textarea {
+    height: 150px;
+    resize: none;
+}
+
+.contact-btn {
+    width: 100%;
+    padding: 12px;
+    background: #d4af37;
+    color: black;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.contact-btn:hover {
+    background: #ff77b7;
+    color: white;
+}
+/* ---------------- PRODUCT MODAL ---------------- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+    animation: fadeIn .3s ease;
+}
+
+.modal-box {
+    background: white;
+    width: 60%;
+    max-width: 850px;
+    padding: 25px;
+    border-radius: 15px;
+    border: 3px solid #d4af37;
+    box-shadow: 0 0 25px rgba(255,119,183,.35);
+    display: flex;
+    gap: 25px;
+    animation: slideUp .35s ease;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideUp {
+    from {transform: translateY(40px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+.modal-box img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 3px solid #ff77b7;
+}
+
+.modal-content h3 {
+    font-size: 24px;
+    color: #000;
+}
+
+.modal-content p {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.close-modal {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: #ff77b7;
+    padding: 8px 14px;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: .3s;
+    font-weight: bold;
+}
+
+.close-modal:hover {
+    background: #d4af37;
+    color: black;
+}
+
+
+.product-card:hover img {
+    transform: scale(1.12);
+}
+/* ---------------- CONTACT FORM OVERHAUL ---------------- */
+.contact-section {
+    width: 80%;
+    margin: 50px auto;
+}
+
+.contact-container {
+    background: white;
+    padding: 45px;
+    border-radius: 20px;
+    border: 3px solid #d4af37;
+    box-shadow: 0 0 25px rgba(255,119,183,.25);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.contact-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-field label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #d4af37;
+    font-size: 14px;
+}
+
+.contact-field input,
+.contact-field textarea {
+    padding: 14px;
+    border-radius: 10px;
+    border: 2px solid #ff77b7;
+    background: #fff5fa;
+    font-size: 15px;
+    transition: .3s ease;
+}
+
+.contact-field input:focus,
+.contact-field textarea:focus {
+    border-color: #d4af37;
+    outline: none;
+    background: white;
+}
+
+textarea {
+    height: 180px;
+}
+
+.contact-btn {
+    margin-top: 25px;
+    width: 100%;
+    background: #d4af37;
+    color: black;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 17px;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.contact-btn:hover {
+    background: #ff77b7;
+    color: white;
+}
+
+/* Mobile fix */
+@media(max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ---------------- PRODUCTS GRID ---------------- */
+.products-section {
+    width: 90%;
+    margin: 50px auto;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* ---------------- PRODUCT CARD ---------------- */
+.product-card {
+    background: white;
+    border: 3px solid #d4af37; /* gold border */
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 5px 25px rgba(255,119,183,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 35px rgba(255,119,183,0.45);
+}
+
+/* ---------------- PRODUCT IMAGE ---------------- */
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #ff77b7;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.12);
+}
+
+/* ---------------- PRODUCT TEXT ---------------- */
+.product-card h3 {
+    margin: 15px 0 5px;
+    color: #000;
+}
+
+.product-card p {
+    font-weight: bold;
+    color: #d4af37; /* gold price */
+    margin-bottom: 10px;
+}
+
+/* ---------------- WISHLIST BUTTON ---------------- */
+.wishlist-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #d4af37; /* luxury gold */
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s, transform 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.wishlist-btn:hover {
+    background: #ff77b7; /* subtle pink hover */
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+
+/* ---------------- SORT FORM ---------------- */
+.sort-form select {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 2px solid #ff77b7;
+    background: #fff5fa;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+}
+
+.sort-form label {
+    font-weight: bold;
+    color: #d4af37;
+    margin-right: 10px;
+}
+
+/* ---------------- RESPONSIVE ---------------- */
+@media(max-width: 768px){
+    .product-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 500px){
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+}
+/* ---------------- PRODUCT MODAL ---------------- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow:auto;
+    background-color: rgba(255,119,183,0.6); /* pink overlay */
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    background: #fff5fa;
+    margin: 5% auto;
+    padding: 25px;
+    border: 4px solid #d4af37; /* luxury gold border */
+    width: 80%;
+    max-width: 600px;
+    border-radius: 20px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+    animation: slideDown 0.3s ease-in-out;
+}
+
+.modal-content img {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid #ff77b7;
+    margin-bottom: 15px;
+}
+
+/* Close Button */
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #d4af37;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close-modal:hover {
+    color: #ff77b7;
+}
+
+/* Modal Buttons */
+.modal-addcart-btn, .modal-wishlist-btn {
+    padding: 12px 25px;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    margin: 10px 5px;
+    transition: 0.3s, transform 0.2s;
+}
+
+.modal-addcart-btn {
+    background: #000;
+    color: #d4af37;
+    border: 2px solid #d4af37;
+}
+
+.modal-addcart-btn:hover {
+    background: #d4af37;
+    color: black;
+    transform: scale(1.05);
+}
+
+.modal-wishlist-btn {
+    background: #d4af37;
+    color: black;
+}
+
+.modal-wishlist-btn:hover {
+    background: #ff77b7;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes slideDown {
+    from {transform: translateY(-50px); opacity:0;}
+    to {transform: translateY(0); opacity:1;}
+}
+
+@keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+}
+.cart-summary-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  margin-top: 30px;
+}
+
+.cart-summary-box h3 {
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.summary-line,
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 0;
+}
+
+.summary-total span {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+.wishlist-count {
+    background: var(--primary-gold);
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.7rem;
+    margin-left: 5px;
+}
+/* Ensure footer stays at bottom */
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}
+
+/* Fix for account page specifically */
+.account-page-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
