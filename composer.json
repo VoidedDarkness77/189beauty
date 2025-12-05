@@ -1,0 +1,9 @@
+{
+    "require": {
+        "stripe/stripe-php": "^13.0",
+        "paypal/rest-api-sdk-php": "^1.14"
+    },
+    "autoload": {
+        "files": ["includes/payment_processor.php"]
+    }
+}
